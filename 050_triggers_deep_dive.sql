@@ -27,7 +27,7 @@ UPDATE purchase_summary
         FROM customer_purchases WHERE customer_purchases.customer_id = purchase_summary.customer_id
         )
 WHERE customer_id = NEW.customer_id
-AND purchase_summary > 0; -- this is just to handle safe update mode;
+AND purchase_summary_id > 0; -- this is just to handle safe update mode;
 
 DROP TRIGGER purchaseUpdatePurchaseSummary_after;
 
@@ -41,13 +41,10 @@ UPDATE purchase_summary
         FROM customer_purchases WHERE customer_purchases.customer_id = purchase_summary.customer_id
         )
 WHERE customer_id = NEW.customer_id
-AND purchase_summary > 0; -- this is just to handle safe update mode;
+AND purchase_summary_id > 0; -- this is just to handle safe update mode;
 
 
 SELECT * FROM purchase_summary;
 
 INSERT INTO customer_purchases VALUES
 (13, 6, 4);
-
-
--- Error Code: 1146. Table 'thriftshop.purchase_summary' doesn't exist
