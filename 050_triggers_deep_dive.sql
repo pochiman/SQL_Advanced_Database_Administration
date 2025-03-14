@@ -10,7 +10,7 @@ FOR EACH ROW
 WHERE column_name = {OLD|NEW}.column_name
 */
 
-
+SELECT * FROM inventory;
 SELECT * FROM customer_purchases;
 
 SELECT * FROM purchase_summary;
